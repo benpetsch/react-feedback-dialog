@@ -1,0 +1,51 @@
+{
+  "name": "react-feedback-dialog",
+  "version": "0.1.2",
+  "description": "A react user feedback dialog + screenshot + canvas highlighting",
+  "main": "out/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir out",
+    "dev": "babel src --watch --out-dir out"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benpetsch/feedback-dialog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benpetsch/feedback-dialog/issues"
+  },
+  "keywords": [
+    "React",
+    "MIT",
+    "feedback",
+    "dialog",
+    "screenshot",
+    "canvas"
+  ],
+  "author": "Benedikt Schmeitz",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "antd": "^3.20.7",
+    "html2canvas": "^1.0.0-rc.3",
+    "konva": "^3.4.1",
+    "polygon-clipping": "^0.14.2",
+    "react-konva": "^16.8.7-3",
+    "react-text-truncate": "^0.15.0",
+    "styled-components": "^4.3.2"
+  }
+}
