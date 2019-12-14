@@ -62,3 +62,6 @@ typings/
 
 # babel prod build
 out
+
+# webpack prod build
+dist
