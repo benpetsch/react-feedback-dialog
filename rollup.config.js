@@ -10,7 +10,7 @@ import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 export default {
-  input: 'lib/index.js',
+  input: 'src/index.js',
   external: ['stream'],
   output: [
     {

@@ -89,5 +89,6 @@ typings/
 # babel prod build
 out
 
-# webpack prod build
+# webpack/rollup prod build
 dist
+lib
