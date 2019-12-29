@@ -1,7 +1,7 @@
 {
   "name": "react-feedback-dialog",
   "version": "0.2.0",
-  "description": "A react user feedback dialog + screenshot + canvas highlighting",
+  "description": "A react user feedback dialog module (screenshots + canvas highlighting)",
   "author": "Benedikt Schmeitz",
   "license": "MIT",
   "repository": {
@@ -27,13 +27,12 @@
     "rollup"
   ],
   "scripts": {
-    "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "build": "rollup -c",
-    "start": "rollup -c -w",
-    "prepublishOnly": "npm run build",
-    "predeploy": "echo 'not working / config from old example' && cd example && npm install && npm run build",
     "deploy": "echo 'not working / config from old example' && gh-pages -d example/build",
-    "published-file-check": "yarn pack && tar -xvzf *.tgz && rm -rf package *.tgz"
+    "prepublishOnly": "rm -rf lib && yarn build",
+    "predeploy": "echo 'not working / config from old example' && cd example && yarn install && yarn build",
+    "postbuild": "yarn pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "start": "styleguidist server"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -41,13 +40,14 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
     "cross-env": "^5.1.4",
+    "css-loader": "^3.4.0",
     "eslint": "^6.6.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
@@ -60,16 +60,17 @@
     "gh-pages": "^1.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "^3.3.0",
+    "react-styleguidist": "9.2.0",
     "rollup": "^0.66.0",
-    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-execute": "^1.1.1",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-terser": "^5.1.3",
-    "rollup-plugin-url": "^1.4.0"
+    "rollup-plugin-url": "^1.4.0",
+    "webpack": "^4.41.5"
   },
   "dependencies": {
     "html2canvas": "^1.0.0-rc.3",
