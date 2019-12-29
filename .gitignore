@@ -92,3 +92,4 @@ out
 # webpack/rollup prod build
 dist
 lib
+lib/index.js
