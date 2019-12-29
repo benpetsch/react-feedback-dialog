@@ -1,34 +1,52 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FeedbackDialog from 'react-feedback-dialog';
 
 import logo from './logo.svg';
 import './App.css';
 
-const EMAIL_SMTP_HOST = '';
-const EMAIL_TO = '';
-const EMAIL_USER = '';
-const EMAIL_PASSWORD = '';
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-class App extends Component {
+    this.state = {
+      active: false
+    };
+
+    this.toggleFeedbackDialog = this.toggleFeedbackDialog.bind(this);
+  }
+
+  toggleFeedbackDialog() {
+    console.log('hello');
+    this.setState((prevState, props) => ({
+      active: !prevState.active
+    }));
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
+        <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-          <h2>test</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <FeedbackDialog
-          config={{
-            EMAIL_SMTP_HOST,
-            EMAIL_TO,
-            EMAIL_USER,
-            EMAIL_PASSWORD
-          }}
-        />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+          <div>
+            <button onClick={this.toggleFeedbackDialog}>Give Feedback</button>
+            <FeedbackDialog
+              active={this.state.active}
+              onClose={() => this.toggleFeedbackDialog()}
+              text="Primary"
+            />
+          </div>
+        </header>
       </div>
     );
   }
