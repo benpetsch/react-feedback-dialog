@@ -1,0 +1,28 @@
+.button {
+  outline: 0;
+  line-height: 1.499;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 0 15px;
+  font-size: 14px;
+
+  margin: 2em auto;
+  border-radius: 4px;
+  border: 2px solid #1890ff;
+  background-color: #1890ff;
+  color: white;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+.button.active,
+.button:active {
+  color: #fff;
+  background-color: #096dd9;
+  border-color: #096dd9;
+}

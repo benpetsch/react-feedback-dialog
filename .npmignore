@@ -1,6 +1,7 @@
 example/
 # node_modules/
-config
+config/
 .babelrc
+.eslintrc
+.gitignore
 CONTRIBUTING.md
-src
