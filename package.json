@@ -78,9 +78,6 @@
   },
   "dependencies": {
     "html2canvas": "^1.0.0-rc.3",
-    "konva": "^3.4.1",
-    "polygon-clipping": "^0.14.2",
-    "react-konva": "^16.8.7-3",
     "react-text-truncate": "^0.15.0",
     "styled-components": "^4.3.2"
   },
