@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import { Button } from '.';
+import Button from './button';
 
 const ModalWrap = styled.div`
   position: fixed;
@@ -17,9 +17,11 @@ const ModalWrap = styled.div`
 `;
 
 const ModalContainer = styled.div`
+  overflow-y: hidden;
   display: flex;
   flex-flow: column nowrap;
-  color: blue;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
   width: 100%;
   height: 100%;
   max-width: 360px;
@@ -33,8 +35,8 @@ const Header = styled.p`
   flex-grow: 0;
   text-align: left;
   background-color: grey;
+  font-weight: 900;
   color: white;
-  font: 300 20px/24px;
   margin: 0px;
   padding: 16px;
 `;
@@ -51,22 +53,32 @@ const Footer = styled.div`
 `;
 
 const DefaultFooter = ({ onOk, onCancel }) => {
+  useEffect(() => {
+    document.body.style.overflowY = 'hidden';
+  });
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflowY = null;
+    };
+  }, []);
+
   return (
     <Footer>
       <Button style={{ marginBottom: 0 }} onClick={onCancel} text="cancel" />
       <Button
         type="primary"
         style={{ marginBottom: 0 }}
-        onClick={() => console.log('Das')}
+        onClick={onOk}
         text="send"
       />
     </Footer>
   );
 };
 
-const Modal = ({ children }) => {
+const Modal = ({ children, ...props }) => {
   return (
-    <ModalWrap>
+    <ModalWrap {...props}>
       <ModalContainer>{children}</ModalContainer>
     </ModalWrap>
   );

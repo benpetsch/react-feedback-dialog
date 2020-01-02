@@ -12,6 +12,7 @@ const Container = styled.div`
   line-height: 32px;
   text-align: center;
   font-size: 14px;
+  font-family: 'Work Sans', sans-serif;
   font-weight: 600;
   padding: 0 15px;
   margin-right: 8px;

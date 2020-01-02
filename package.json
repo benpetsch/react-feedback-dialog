@@ -1,6 +1,6 @@
 {
   "name": "react-feedback-dialog",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A react user feedback dialog module (screenshots + canvas highlighting)",
   "author": "Benedikt Schmeitz",
   "license": "MIT",
@@ -32,6 +32,7 @@
     "prepublishOnly": "rm -rf lib && yarn build",
     "predeploy": "echo 'not working / config from old example' && cd example && yarn install && yarn build",
     "postbuild": "yarn pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "svgr": "svgr -d src/components/ui/icons/ assets/",
     "start": "styleguidist server"
   },
   "peerDependencies": {
@@ -44,7 +45,10 @@
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
+    "@svgr/cli": "^5.0.1",
+    "@svgr/webpack": "^5.0.1",
     "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.10.6",
     "cross-env": "^5.1.4",
     "css-loader": "^3.4.0",
